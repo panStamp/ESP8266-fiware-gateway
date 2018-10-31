@@ -27,7 +27,6 @@
 #include <ESP8266WebServer.h>
 #include <WiFiManager.h>         //https://github.com/tzapu/WiFiManager
 
-//#include <WiFiClient.h>
 #include "gwapmaster.h"
 #include "fiware.h"
 
