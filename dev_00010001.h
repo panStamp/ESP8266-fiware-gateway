@@ -32,7 +32,7 @@
  * 
  * Description:
  * 
- * GWAP packet class
+ * Dual temperature + humidity sensor
  */
 class DEV_00010001 : public GWAPDEVICE
 {
