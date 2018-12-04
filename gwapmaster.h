@@ -27,6 +27,9 @@
 
 #include "gwapmodem.h"
 #include "dev_00010001.h"
+#include "dev_00010004.h"
+#include "dev_00010008.h"
+#include "dev_00010009.h"
 
 /**
  * Class: GWAPMASTER
@@ -99,13 +102,27 @@ class GWAPMASTER
                     sprintf(ptr, "%X", packet.uid[i]);
                   ptr += 2;
                 }
-                 
-                if(packet.pCode == 0x00010001)
+
+                if (packet.pCode == 0x00010001)
                 {
                   DEV_00010001 device(&packet);
                   return device.getEndpointInfo(endpointInfo);
                 }
-                return true;
+                else if (packet.pCode == 0x00010004)
+                {
+                  DEV_00010004 device(&packet);
+                  return device.getEndpointInfo(endpointInfo);
+                }
+                else if (packet.pCode == 0x00010008)
+                {
+                  DEV_00010008 device(&packet);
+                  return device.getEndpointInfo(endpointInfo);
+                }
+                else if (packet.pCode == 0x00010009)
+                {
+                  DEV_00010009 device(&packet);
+                  return device.getEndpointInfo(endpointInfo);
+                }
               }
             }
           }
